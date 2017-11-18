@@ -1,0 +1,8 @@
+开发日志：
+    需求：
+        1、歌曲的添加，删除，编辑，播放，搜索
+        2、支持分页显示
+        3、如果有歌词，则播放的时候同步显示歌词
+
+    技术栈：
+          jQuery + bootstrap + nodejs + express + mysql + handlebars

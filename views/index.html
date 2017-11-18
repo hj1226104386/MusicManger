@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>音乐管理</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/dashbord.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--导航条-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">音乐播放管理</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">控制台</a></li>
+                <li><a href="#">设置</a></li>
+                <li><a href="#">用户信息</a></li>
+                <li><a href="#">帮助</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--主体部分-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 main">
+            <div class="sub-header">
+                <div class="row">
+                    <h2 class="col-sm-4 col-md-4">
+                        歌曲编辑
+                    </h2>
+                    <h2 class="col-sm-8 col-md-8 text-right">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label class="sr-only"></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="歌曲、歌手">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary">搜索歌曲</button>
+                        </form>
+                    </h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--<script src="./public/lib/requirejs/require.js" data-main='./public/js/dashbord/index'></script>-->
+</body>
+</html>

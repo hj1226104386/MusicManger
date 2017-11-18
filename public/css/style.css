@@ -1,0 +1,29 @@
+audio, canvas, progress, video {
+    vertical-align: middle;
+}
+.player{
+    margin-top: 30px;
+    text-align: center;
+}
+.player > p {
+    margin-top: 15px;
+    color:#337ab7;
+}
+.sub-header{
+    overflow: hidden;
+}
+.sub-header h2{
+    margin-bottom: 0;
+}
+
+/*歌曲编辑页*/
+.edit-form{
+    margin-top: 100px;
+}
+.edit-btns{
+    margin-top: 30px;
+    text-align: center;
+}
+.edit-btns>button{
+    margin:0 15px;
+}
