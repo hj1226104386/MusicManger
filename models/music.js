@@ -20,7 +20,11 @@ Music.prototype = {
         db.query('SELECT * FROM list limit ?,?',[this.pageIndex,this.pageSize],callback)
     },
     search:function (callback) {
-        db.query('SELECT * FROM list WHERE song like ? OR singer like ?',[`%${this.keyword}%`,`%${this.keyword}%`],callback)
+        if(this.keyword){
+            db.query('SELECT * FROM list WHERE song like ? OR singer like ?',[`%${this.keyword}%`,`%${this.keyword}%`],callback)
+        }else{
+            db.query('SELECT * FROM list limit ?,?',[this.pageIndex,this.pageSize],callback)
+        }
     }
 }
 

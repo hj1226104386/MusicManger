@@ -25,11 +25,7 @@ require(['jquery','hbs'],function ($,hbs) {
     // 删除音乐
     $('#Search').on('click',function () {
         var keyword = $('#Keyword').val();
-        if(keyword){
-            renderList('/search','post',{keyword})
-        }else{
-            alert('请输入搜索关键字');
-        }
+        renderList('/search','post',{keyword})
     })
 
     // 渲染列表封装
