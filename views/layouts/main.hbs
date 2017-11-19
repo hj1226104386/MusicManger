@@ -56,6 +56,13 @@
                         </h2>
                     {{/if}}
                 </div>
+                {{#if showSearch}}
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <a type="button" class="btn btn-info" href='/add'>添加新歌</a>
+                        </div>
+                    </div>
+                {{/if}}
             </div>
             {{{body}}}
         </div>
@@ -63,6 +70,10 @@
 </div>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--<script src="./public/lib/paginator/bootstrap-paginator.js"></script>-->
 <script src="./public/lib/requirejs/require.js" data-main='./public/js/dashbord/index'></script>
+<script>
+
+</script>
 </body>
 </html>

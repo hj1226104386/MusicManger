@@ -27,3 +27,8 @@ audio, canvas, progress, video {
 .edit-btns>button{
     margin:0 15px;
 }
+
+/*重置分页样式*/
+#Pagintor{
+    margin-top:0!important;
+}
