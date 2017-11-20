@@ -5,10 +5,9 @@
  * @Date:2017/11/18
  */
 var express = require('express');
-var app = express();
 var Router = express.Router();
-var Music = require('../models/music');
-var Pager = require('../models/pager');
+var config = require('../config/config'); // 配置项
+var Music = require('../models/music'); // 音乐对象
 
 Router.get('/', function (req, res) {
     res.render('index', {showSearch: true, title: '歌曲列表'});
@@ -29,20 +28,15 @@ Router.get('/edit', function (req, res) {
 })
 // 获取所有歌曲
 Router.get('/allSongs', function (req, res) {
-    // 默认查询第一页
-    var params = {
-        pageIndex: req.query.currentPage,
-        pageSize: 5
-    }
-    var music = new Music(params);
-    music.countTotalPage(function (result) {
+    var currentPage  =req.query.currentPage; // 当前页，从请求参数中获取
+    Music.countTotalPage(function (result) {
         // 获取总记录数
         var total = result[0].total;
         // 获取合计页数
-        var totalPages = Math.ceil(total / params.pageSize);
-        // 接下来查询数据
-        var offset = (params.pageIndex - 1) * params.pageSize;
-        music.indexList(offset, params.pageSize, function (result) {
+        var totalPages = Math.ceil(total / config.pageSize);
+        // 接下来查询数据的起始数量
+        var offset = (currentPage - 1) * config.pageSize;
+        Music.indexList(offset, config.pageSize, function (result) {
             return res.json({
                 code: 200,
                 data: result,
@@ -54,13 +48,26 @@ Router.get('/allSongs', function (req, res) {
 })
 Router.post('/search', function (req, res) {
     var params = {
-        keyword: req.body.keyword
+        keyword: req.body.keyword,
+        pageIndex:req.body.currentPage // 当前页，从请求参数中获取
     }
     var music = new Music(params);
-    music.search(function (result) {
-        return res.json({
-            code: 200,
-            data: result
+    music.searchTotalPage(function (result) {
+        // 获取总记录数
+        var total = result[0].total;
+        // 获取合计页数
+        console.log(result)
+        var totalPages = Math.ceil(total / config.pageSize);
+        // 接下来查询数据的起始数量
+        var offset = (music.pageIndex - 1) * config.pageSize;
+        console.log(result)
+        music.searchList(offset, config.pageSize, function (result) {
+            console.log(result);
+            return res.json({
+                code: 200,
+                data: result,
+                totalPage: totalPages
+            })
         })
     })
 })

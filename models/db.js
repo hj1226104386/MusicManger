@@ -18,6 +18,7 @@ module.exports.query = function (sql, params, callback) {
         // Use the connection
         connection.query(sql, params, function (error, results, fields) {
             // 错误捕捉
+            console.log(error)
             if (error) throw error;
             console.log('执行的sql为：' + sql, ',参数为：' + params)
             // 传入回调函数,真正的操作在回调中

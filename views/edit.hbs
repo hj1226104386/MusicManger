@@ -12,9 +12,13 @@
         <div class="form-group">
             <label>歌曲时长</label>
             <input type="text" class="form-control" name='duration' value="{{data.duration}}" placeholder="歌曲时长">
-            <input type="hidden" class="form-control" name='id' value="{{data.id}}">
+        </div>
+        <div class="form-group">
+            <label>歌曲链接</label>
+            <input type="text" class="form-control" name='source' value="{{data.source}}" placeholder="歌曲链接">
         </div>
         <div class="edit-btns">
+            <input type="hidden" class="form-control" name='id' value="{{data.id}}">
             <button type="submit" class="btn btn-primary">确定修改</button>
             <a type="button" class="btn btn-default" href='/'>返回</a>
         </div>
