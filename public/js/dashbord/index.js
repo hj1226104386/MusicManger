@@ -31,9 +31,11 @@ require(['jquery', 'hbs', 'paginator'], function ($, hbs, paginator) {
             dataType: 'json',
             data: {id: $id},
             success: function (res) {
-                console.log(res.data.source);
-                // 给audio赋值
-                $('#Audio').prop('src', res.data.source)
+                if(res.data.source){
+                    // 给audio赋值
+                    return $('#Audio').prop('src', res.data.source)
+                }
+                confirm('暂无播放链接');
             }
         })
     })

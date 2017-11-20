@@ -20,7 +20,6 @@ Router.get('/edit', function (req, res) {
     music.querySong(function (result) {
         if (result.length > 0) {
             var data = result[0];
-            console.log(data)
             res.render('edit', {showSearch: false, title: '编辑歌曲信息', data});
         }
     })
@@ -76,12 +75,13 @@ Router.post('/newSong', function (req, res) {
     var params = {
         song: body.song,
         singer: body.singer,
-        duration: body.duration
+        duration: body.duration,
+        source: body.source
     };
     var music = new Music(params);
     music.addSong(function (result) {
         if (result.affectedRows === 1) {
-            return res.render('index', {showSearch: false, title: '添加歌曲'})
+            return res.render('index', {showSearch: true, title: '添加歌曲'})
         }
     })
 })

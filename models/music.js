@@ -13,6 +13,7 @@ function Music(obj) {
     this.song = obj.song || '';
     this.duration = obj.duration || '';
     this.keyword = obj.keyword || '';
+    this.source = obj.source || '';
     this.pageIndex = obj.pageIndex || 0;
     this.pageSize = obj.pageSize || 8;
 }
@@ -21,7 +22,7 @@ Music.prototype = {
     constructor: Music,
     // 添加一首新歌曲
     addSong: function (callback) {
-        db.query('INSERT INTO list (song,singer,duration) values (?,?,?)', [this.song, this.singer, this.duration], callback)
+        db.query('INSERT INTO list (song,singer,duration,source) values (?,?,?,?)', [this.song, this.singer, this.duration,this.source], callback)
     },
     // 查询一首歌的信息
     querySong: function (callback) {
